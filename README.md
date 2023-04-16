@@ -75,14 +75,14 @@ Representa un choque de pajaro en un avion en concreto.
 - R4: El coste de reparacion debe ser mayor de 0.
 - R5: El coste de otros debe ser mayor de 0.
 
-***Criterio de igualdad**: Dos choques son iguales si todas sus propiedades básicas son iguales.
+**Criterio de igualdad**: Dos choques son iguales si todas sus propiedades básicas son iguales.
 
 **Criterio de ordenación**: Por fecha, y luego hora.
 
 #### Tipos auxiliares:
 -Bird: representa un pajaro con las siguientes propuedades: -Size -Species -PilotWarned
 
-###Factoría - FactoriaBirdStrikes
+###FactoriaBirdStrikes:
 -BirdStrikes leerBirdStrikes(String nombreFichero): Crea un objeto de tipo BirdStrike a partir de la unformacion recogida en el archivo csv, cuya ruta se da como parametro.
 
 **Tipo Contenedor - BirdStrikes**:
