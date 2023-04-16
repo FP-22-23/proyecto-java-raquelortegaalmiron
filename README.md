@@ -82,7 +82,8 @@ Representa un choque de pajaro en un avion en concreto.
 #### Tipos auxiliares:
 -Bird: representa un pajaro con las siguientes propuedades: -Size -Species -PilotWarned
 
-###FactoriaBirdStrikes:
+### FactoriaBirdStrikes:
+
 -BirdStrikes leerBirdStrikes(String nombreFichero): Crea un objeto de tipo BirdStrike a partir de la unformacion recogida en el archivo csv, cuya ruta se da como parametro.
 
 **Tipo Contenedor - BirdStrikes**:
@@ -92,7 +93,7 @@ Clase contenedora de los objetos de tipo BIrdStrike.
 -birdStrikes de tipo List<BirdStrike>, consultable. Lista de BirdStrikes.
 -numero BirdStrikes, de tipo Integer, consultable. Numero de birdStrikes en el contenedor.
 
-***Constructores***:
+***Constructores:***
 
 -C1: Constructor por defecto. Crea un objeto de tipo BirdStrikes sin ningun BirdStrike almacenado.
 -C2: COnstructor con un oarametro de tipo Collection<BirdStrike>. Crea un objeto de tipo BirdStrikes con las birdStrikes incluidas en la coleccion dada como parametro.
