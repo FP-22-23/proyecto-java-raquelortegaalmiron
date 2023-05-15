@@ -75,15 +75,14 @@ Representa un choque de pajaro en un avion en concreto.
 - R4: El coste de reparacion debe ser mayor de 0.
 - R5: El coste de otros debe ser mayor de 0.
 
-**Criterio de igualdad**: Dos choques son iguales si todas sus propiedades básicas son iguales.
+***Criterio de igualdad**: Dos choques son iguales si todas sus propiedades básicas son iguales.
 
 **Criterio de ordenación**: Por fecha, y luego hora.
 
 #### Tipos auxiliares:
 -Bird: representa un pajaro con las siguientes propuedades: -Size -Species -PilotWarned
 
-### FactoriaBirdStrikes:
-
+###Factoría - FactoriaBirdStrikes
 -BirdStrikes leerBirdStrikes(String nombreFichero): Crea un objeto de tipo BirdStrike a partir de la unformacion recogida en el archivo csv, cuya ruta se da como parametro.
 
 **Tipo Contenedor - BirdStrikes**:
@@ -93,7 +92,7 @@ Clase contenedora de los objetos de tipo BIrdStrike.
 -birdStrikes de tipo List<BirdStrike>, consultable. Lista de BirdStrikes.
 -numero BirdStrikes, de tipo Integer, consultable. Numero de birdStrikes en el contenedor.
 
-***Constructores:***
+***Constructores***:
 
 -C1: Constructor por defecto. Crea un objeto de tipo BirdStrikes sin ningun BirdStrike almacenado.
 -C2: COnstructor con un oarametro de tipo Collection<BirdStrike>. Crea un objeto de tipo BirdStrikes con las birdStrikes incluidas en la coleccion dada como parametro.
@@ -102,18 +101,39 @@ Clase contenedora de los objetos de tipo BIrdStrike.
 
 ***Otras propiedades***:
 
--void agrearBirdStrikes(BirdStrike b): Añade un BirdStrike.
+- void agrearBirdStrikes(BirdStrike b): Añade un BirdStrike.
 
--void agregarCollection(Collection<BirdStrikes> c): Añade una colleccion de birdStrikes.
+- void agregarCollection(Collection<BirdStrikes> c): Añade una colleccion de birdStrikes.
 
--void eliminarBirdStrike(BirdStrike b): Elimina un BirdStrike.
+- void eliminarBirdStrike(BirdStrike b): Elimina un BirdStrike.
 
--Boolean existeAvionNombreYModelo(String name, String model): Devuelve un boolean si existe este modelo y ese nombre de avion.
+- Boolean existeAvionNombreYModelo(String name, String model): Devuelve true si existe este modelo y ese nombre de avion.
 
--Double getMediaCosteTotal(): Devuelve la media del coste total de todos los BirdStrikes.
+- Double getMediaCosteTotal(): Devuelve la media del coste total de todos los BirdStrikes.
 
--Collection<BirdStrike> getFiltradoPorHoraDelDia(Timeofday timeday): Devuelve una coleccion filtrada por el momento del día designado.
+- Collection<BirdStrike> getFiltradoPorHoraDelDia(Timeofday timeday): Devuelve una coleccion filtrada por el momento del día designado.
 
--Map<String, Set<Size>> getTamañoPorEspecie(): Devuelve un map que por cada especie nos devuelve el tamaño que esa especie de pajaro puede tener.
+- Map<String, Set<Size>> getTamañoPorEspecie(): Devuelve un map que por cada especie nos devuelve el tamaño que esa especie de pajaro puede tener.
 
--Map<Boolean, Integer> getCuantosPilotosFueronAvisados(): Devuelve un map que relaciona si fue avisado el piloto o no con la cantidad a la que le pasó.
+- Map<Boolean, Integer> getCuantosPilotosFueronAvisados(): Devuelve un map que relaciona si fue avisado el piloto o no con la cantidad a la que le pasó.
+
+
+- Boolean existeAvionNombreYModelo2(String name, String model):Devuelve true si existe este modelo y ese nombre de avion. Por streams.
+	
+- Double getMediaCosteTotal2():Devuelve la media del coste total de todos los BirdStrikes. Por streams.
+	
+- Collection<BirdStrike> getFiltradoPorHoraDelDia2(Timeofday timeday): Devuelve una colleccion filtrada por el momento del día designado.
+	
+- OptionalDouble calcularMaximoCosteTotal(Boolean pilotWarned): Devuelve el coste total máximo si el piloto cumple que fue/no fue avisado.
+	
+- List<BirdStrike> seleccionFiltradoOrdenado(Size size, int year): Devuelve una lista filtrada ordenada de todos los birdstrikes que cumplan que el pajaro tenia un tamaño determinado y el año es ese.
+	
+- Map<String, Set<Size>> getTamañoPorEspecie2():Devuelve un map que por cada especie nos devuelve el tamaño que esa especie de pajaro puede tener.
+	
+- Map<Timeofday, Integer> getNumAccidentesPorMomento(): Devuelve un map que por cada momento del día (Dusk, day, night, dawn) nos da la cantidad de birdstrikes que ha habido.
+	
+- Map<Size, Integer> getMaximoCosteTotalPorTamaño(): Devuelve un map que asocia a cada tamaño el mayor coste total.
+	
+- SortedMap<Integer, List<BirdStrike>> getMasRapidosPorNumeroDeEngines(Integer n): Devuelve un SortedMap que asocia a cada numero de motores los n vuelos mas rapidos con ese numero.
+	
+- Map<String, Integer> getMaxMillasDesdeElAeropuertoPorLineaDeVuelo(): Devuelve un map que asocia a cada linea de vuelos las distancia maxima a la que se encontró el avion cuando el accidente sucedió.
